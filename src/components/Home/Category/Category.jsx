@@ -1,8 +1,25 @@
 import "./Category.scss";
+import cat1 from '../../../images/category/cat-1.jpg'
+
 const Category = () => {
     return (
-    <div>Category</div>
+    <div className="shop-by-category">
+        <div className="categories">
+            <div className="category">
+                <img src={cat1} alt="" />
+            </div>
+            <div className="category">
+                <img src={cat1} alt="" />
+            </div>
+            <div className="category">
+                <img src={cat1} alt="" />
+            </div>
+            <div className="category">
+                <img src={cat1} alt="" />
+            </div>
+        </div>
+    </div>
     );
 };
 
-// export default Category;
+export default Category;
