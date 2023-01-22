@@ -8,12 +8,12 @@ const Cart = ({ setShowCart }) => {
         <div className="opac-layer"></div>
         <div className="cart-content">
             <div className="cart-header">
-                <div className="heading">Shopping Cart</div>
-                <div className="close-btn"
+                <span className="heading">Shopping Cart</span>
+                <span className="close-btn"
                     onClick={() => setShowCart(false)}>
-                    <MdClose />
+                    <MdClose className="close-btn" />
                     <span className="text">close</span>
-                </div>
+                </span>
                 {/* <div className="empty-cart">
                     <BsCartX/>
                     <span>No Products in the cart</span>
@@ -23,7 +23,7 @@ const Cart = ({ setShowCart }) => {
                 <CartItem/>
                 <div className="cart-footer">
                     <div className="subtotal">
-                        <span className="text">Subtotal</span>&nbsp;
+                        <span className="text">Subtotal:</span>&nbsp;
                     <span className="text total">&#8360;999</span>
                     </div>
                     <div className="button">
