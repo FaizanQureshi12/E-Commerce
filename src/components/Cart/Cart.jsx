@@ -4,8 +4,8 @@ import { BsCartX } from 'react-icons/bs'
 import CartItem from './CartItem/CartItem'
 import { useContext } from "react";
 import { Context } from "../../utils/context";
-import {loadStripe} from '@stripe/stripe-js'
-import {makePaymentRequest} from '../../utils/api'
+import { loadStripe } from '@stripe/stripe-js'
+import { makePaymentRequest } from '../../utils/api'
 
 const Cart = ({ setShowCart }) => {
     const { cartItems, cartSubTotal } = useContext(Context)
@@ -13,20 +13,20 @@ const Cart = ({ setShowCart }) => {
         process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY
     )
 
-    const handlePayment = async ()=>{
-try {
-     const stripe = await stripePromise;
-    const res = await makePaymentRequest.post('/api/orders',{
-        products:cartItems,
-    });
+    const handlePayment = async () => {
+        try {
+            const stripe = await stripePromise;
+            const res = await makePaymentRequest.post('/api/orders', {
+                products: cartItems,
+            });
 
-    await stripe.redirectToCheckout({
-     sessionId: res.data.stripeSession.id   
-    })
-} catch (error) {
-    console.log(error)
-}
- 
+            await stripe.redirectToCheckout({
+                sessionId: res.data.stripeSession.id
+            })
+        } catch (error) {
+            console.log(error)
+        }
+
     }
 
     return (<div className="cart-panel">
@@ -36,17 +36,20 @@ try {
                 <span className="heading">Shopping Cart</span>
                 <span className="close-btn"
                     onClick={() => setShowCart(false)}>
-                    <MdClose className="close-btn" />
+                    <MdClose
+                    // className="close-btn"
+                    />
                     <span className="text">close</span>
                 </span>
-                {!cartItems?.length &&
+            </div>
+            {!cartItems?.length &&
                     <div className="empty-cart">
                         <BsCartX />
                         <span>No Products in the cart</span>
                         <button className="return-cta">RETURN TO SHOP</button>
                     </div>}
 
-                {!!cartItems?.length &&
+            {!!cartItems?.length &&
                     <>
                         <CartItem />
                         <div className="cart-footer">
@@ -56,17 +59,17 @@ try {
                                     &#8360;{cartSubTotal}</span>
                             </div>
                             <div className="button">
-                                <div className="checkout-cta"
-                                onClick={handlePayment}>
+                                <button className="checkout-cta"
+                                    onClick={handlePayment}>
                                     Checkout
-                                </div>
+                                </button>
                             </div>
                         </div>
                     </>
                 }
-            </div>
         </div>
-    </div>);
+    </div>
+    );
 };
 
 export default Cart;

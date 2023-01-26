@@ -1,7 +1,7 @@
 import "./CartItem.scss";
 import { MdClose } from 'react-icons/md'
 // import prod from '../../../images/products/earbuds-prod-1.webp'
-import {React, useContext } from "react";
+import { React, useContext } from "react";
 import { Context } from "../../../utils/context";
 
 const CartItem = () => {
@@ -12,7 +12,6 @@ const CartItem = () => {
         <div className="cart-products" >
             {cartItems?.map((item) => (
                 <div key={item.id} className="search-result-item">
-                    {/*  <div key={item.id} className="cart-product"> */}
                     <div className="img-container">
                         <img src={
                             process.env.REACT_APP_DEV_URL +

@@ -7,14 +7,13 @@ import { AiOutlineHeart } from 'react-icons/ai'
 import Search from './Search/Search'
 import Cart from '../Cart/Cart'
 import { Context } from "../../utils/context";
-// import {Context} from ' ../../utils/Context'
 
 
 const Header = () => {
     const [scrolled, setScrolled] = useState(false);
     const [showCart, setShowCart] = useState(false);
     const [showSearch, setShowSearch] = useState(false);
-    const {cartCount} =useContext(Context)
+    const { cartCount } = useContext(Context)
     const navigate = useNavigate()
 
     const handleScroll = () => {
@@ -30,6 +29,7 @@ const Header = () => {
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);
     }, []);
+    
     return (
         <>
             <header className={`main-header ${scrolled ? "sticky-header" : ""}`}>
@@ -49,7 +49,7 @@ const Header = () => {
                         <span className="cart-icon"
                             onClick={() => setShowCart(true)} >
                             <CgShoppingCart />
-                            {!!cartCount && <span>{cartCount}</span> }
+                            {!!cartCount && <span>{cartCount}</span>}
                         </span>
                     </div>
                 </div>
