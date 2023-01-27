@@ -1,6 +1,6 @@
 import "./SingleProduct.scss";
 import RelatedProducts from "./RelatedProducts/RelatedProducts";
-import { useState,useContext } from "react";
+import { useState, useContext } from "react";
 import {
     FaFacebookF, FaTwitter, FaInstagram,
     FaLinkedinIn, FaPinterest, FaCartPlus,
@@ -13,16 +13,16 @@ import { Context } from "../../utils/context";
 
 const SingleProduct = () => {
 
-    const [quantity,setQuantity] =useState(1)
+    const [quantity, setQuantity] = useState(1)
     const { id } = useParams();
     const { data } = useFetch(`/api/products?populate=*&[filters][id]=${id}`);
-    const {handleAddToCart}= useContext (Context)
-    const increment =()=>{
-        setQuantity((prevState)=>prevState + 1)
+    const { handleAddToCart } = useContext(Context)
+    const increment = () => {
+        setQuantity((prevState) => prevState + 1)
     }
-    const decrement =()=>{
-        setQuantity((prevState)=>{
-            if(prevState === 1) return 1
+    const decrement = () => {
+        setQuantity((prevState) => {
+            if (prevState === 1) return 1
             return prevState - 1
         })
     }
@@ -49,10 +49,10 @@ const SingleProduct = () => {
                             <span onClick={increment}>+</span>
                         </div>
                         <button className="add-to-cart-button"
-                        onClick={()=>{
-                            handleAddToCart(data.data[0],quantity)
-                            setQuantity(1)
-                        }}>
+                            onClick={() => {
+                                handleAddToCart(data.data[0], quantity)
+                                setQuantity(1)
+                            }}>
                             <FaCartPlus size={20} />
                             ADD TO CART
                         </button>
@@ -63,15 +63,22 @@ const SingleProduct = () => {
                                 Category : &nbsp;
                                 <span >{
                                     product.categories.data[0].attributes
-                                    .title
+                                        .title
                                 }</span>
                             </span>
                             <span className="text-bold">
                                 Share :
                                 <span className="social-icons">
-                                    <FaFacebookF size={16} />
-                                    <FaInstagram size={16} />
-                                    <FaLinkedinIn size={16} />
+
+                                    <a href="https://web.facebook.com/FaizanDynamicEarth123" target='blank'>
+                                        <FaFacebookF size={17} />
+                                    </a>
+                                    <a href="https://www.instagram.com/faizan4949/" target='blank'>
+                                        <FaInstagram size={17} />
+                                    </a>
+                                    <a href="https://www.linkedin.com/in/faizan-qureshi-5a667a244/" target='blank'>
+                                        <FaLinkedinIn size={17} />
+                                    </a>
                                     <FaPinterest size={16} />
                                     <FaTwitter size={16} />
                                 </span>
@@ -81,8 +88,8 @@ const SingleProduct = () => {
                     </span>
                 </div>
             </div>
-            <RelatedProducts productId={id} 
-            categoryId={product.categories.data[0].id} />
+            <RelatedProducts productId={id}
+                categoryId={product.categories.data[0].id} />
         </div>
     </div>);
 };

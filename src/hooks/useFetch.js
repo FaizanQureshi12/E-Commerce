@@ -5,8 +5,8 @@ const useFetch = (endpoint) => {
     const [data, setDate] = useState()
 
     useEffect( () => {
-        makeApiCall()
-    }, [endpoint])
+        makeApiCall();
+    }, [endpoint]);
 
     const makeApiCall = async () => {
         const res = await fetchDataFromApi(endpoint)

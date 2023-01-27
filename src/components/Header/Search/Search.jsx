@@ -3,7 +3,7 @@ import { useState } from "react";
 import { MdClose } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
 import useFetch from '../../../hooks/useFetch'
-import prod from '../../../images/products/earbuds-prod-1.webp'
+// import prod from '../../../images/products/earbuds-prod-1.webp'
 
 
 const Search = ({ setShowSearch }) => {

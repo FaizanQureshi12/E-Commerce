@@ -10,7 +10,7 @@ const Category = () => {
     )
 
     return (
-        <div className="category-main-content">
+        <div className="category-main-content" id="category">
             <div className="layout">
                 <div className="category-title">
                     {data?.data?.[0]?.attributes?.categories?.data?.[0]

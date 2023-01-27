@@ -1,6 +1,7 @@
 import { useEffect, useState, useContext } from "react";
 import "./Header.scss";
 import { useNavigate } from "react-router-dom";
+import { Link } from 'react-scroll';
 import { TbSearch } from 'react-icons/tb'
 import { CgShoppingCart } from 'react-icons/cg'
 import { AiOutlineHeart } from 'react-icons/ai'
@@ -29,15 +30,22 @@ const Header = () => {
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);
     }, []);
-    
+
     return (
         <>
             <header className={`main-header ${scrolled ? "sticky-header" : ""}`}>
                 <div className="header-content">
                     <ul className="left">
                         <li onClick={() => navigate('/')}>Home</li>
-                        <li>About</li>
-                        <li>Categories</li>
+                        <Link spy={true} to='newsLetter' smooth={true}>
+                            <li >About</li>
+                        </Link>
+                        <Link spy={true} to='category' smooth={true}>
+                            <li >Categories</li>
+                        </Link>
+                        <Link spy={true} to='products' smooth={true}>
+                            <li >Products</li>
+                        </Link>
                     </ul>
 
                     <div className="center"
@@ -45,7 +53,11 @@ const Header = () => {
                     <div className="right">
                         <TbSearch
                             onClick={() => setShowSearch(true)} />
-                        <AiOutlineHeart />
+
+                        <Link spy={true} to='products' smooth={true}>
+                            <AiOutlineHeart />
+                        </Link>
+
                         <span className="cart-icon"
                             onClick={() => setShowCart(true)} >
                             <CgShoppingCart />

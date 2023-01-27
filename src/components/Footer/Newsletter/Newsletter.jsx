@@ -6,7 +6,7 @@ import {
 } from 'react-icons/fa'
 
 const Newsletter = () => {
-    return <div className="newsletter-section">
+    return <div className="newsletter-section" id="newsLetter">
         <div className="newsletter-content">
             <span className="small-text">NewsLetter</span>
             <span className="big-text">Sign Up For Latest updates and offers</span>
@@ -17,16 +17,22 @@ const Newsletter = () => {
             <div className="text">Will be used in accordance with our Privacy Policy</div>
             <div className="socail-icons">
                 <div className="icon">
-                    <FaFacebookF size={14} />
+                    <a href="https://web.facebook.com/FaizanDynamicEarth123" target='blank'>
+                        <FaFacebookF size={17} style={{ color: "white" }} />
+                    </a>
                 </div>
                 <div className="icon">
-                    <FaInstagram size={14} />
+                    <a href="https://www.instagram.com/faizan4949/" target='blank'>
+                        <FaInstagram size={17} style={{ color: "white" }} />
+                    </a>
                 </div>
                 <div className="icon">
-                    <FaLinkedinIn size={14} />
+                    <a href="https://www.linkedin.com/in/faizan-qureshi-5a667a244/" target='blank'>
+                        <FaLinkedinIn size={17} style={{ color: "white" }} />
+                    </a>
                 </div>
                 <div className="icon">
-                    <FaTwitter size={14} />
+                    <FaTwitter size={16} />
                 </div>
             </div>
         </div>
