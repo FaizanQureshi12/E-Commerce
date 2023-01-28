@@ -11,7 +11,7 @@ function App() {
     return (
         <BrowserRouter>
             <AppContext>
-                <Header />
+                <Header /> 
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/category/:id" element={< Category />} />

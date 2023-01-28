@@ -30,31 +30,32 @@ const Cart = ({ setShowCart }) => {
     }
 
     return (
-    <div className="cart-panel">
-        <div className="opac-layer"></div>
-        <div className="cart-content">
-            <div className="cart-header">
-                <span className="heading">Shopping Cart</span>
-                <span className="close-btn"
-                    onClick={() => setShowCart(false)}>
-                    <MdClose
-                    // className="close-btn"
-                    />
-                    <span className="text">close</span>
-                </span>
-            </div>
-            {!cartItems?.length &&
+        <div className="cart-panel" >
+            <div className="opac-layer"></div>
+            <div className="cart-content">
+                <div className="cart-header">
+                    <span className="heading">Shopping Cart</span>
+                    <span className="close-btn"
+                        onClick={() => setShowCart(false)}>
+                        <MdClose
+                        // className="close-btn"
+                        />
+                        <span className="text">close</span>
+                    </span>
+                </div>
+                {!cartItems?.length &&
                     <div className="empty-cart">
                         <BsCartX />
                         <span>No Products in the cart</span>
                         <button className="return-cta">RETURN TO SHOP</button>
                     </div>}
 
-            {!!cartItems?.length &&
+                {!!cartItems?.length &&
                     <>
                         <CartItem />
                         <div className="cart-footer">
-                            <div className="subtotal">
+                            <div className="subtotal"
+                                style={{ backgroundColor: 'white' }} >
                                 <span className="text">Subtotal:</span>&nbsp;
                                 <span className="text total">
                                     &#8360;{cartSubTotal}</span>
@@ -68,8 +69,8 @@ const Cart = ({ setShowCart }) => {
                         </div>
                     </>
                 }
+            </div>
         </div>
-    </div>
     );
 };
 

@@ -4,7 +4,7 @@ import { Link } from "react-scroll";
 
 const Banner = () => {
     return (
-        <div className="hero-banner">
+        <div className="hero-banner" id="home">
             <div className="content">
                 <div className="text-content">
                     <h1>SALES</h1>

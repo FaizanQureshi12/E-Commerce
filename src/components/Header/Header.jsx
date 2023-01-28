@@ -1,7 +1,7 @@
 import { useEffect, useState, useContext } from "react";
 import "./Header.scss";
 import { useNavigate } from "react-router-dom";
-import { Link } from 'react-scroll';
+import { Link } from 'react-scroll';  
 import { TbSearch } from 'react-icons/tb'
 import { CgShoppingCart } from 'react-icons/cg'
 import { AiOutlineHeart } from 'react-icons/ai'
@@ -34,9 +34,11 @@ const Header = () => {
     return (
         <>
             <header className={`main-header ${scrolled ? "sticky-header" : ""}`}>
-                <div className="header-content">
+                <div className="header-content" >
                     <ul className="left">
-                        <li onClick={() => navigate('/')}>Home</li>
+                        <li onClick={() => navigate('/')}>
+                            Home
+                        </li>
                         <Link spy={true} to='newsLetter' smooth={true}>
                             <li >About</li>
                         </Link>
