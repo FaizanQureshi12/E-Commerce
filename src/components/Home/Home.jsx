@@ -22,12 +22,13 @@ const Home = () => {
         }
         )
     }
+
     const getCategories = () => {
         fetchDataFromApi('/api/categories?populate=*').then((res) => {
             console.log(res)
             setCategories(res)
         }
-        )
+    )
     }
 
     return (
@@ -35,8 +36,11 @@ const Home = () => {
             <Banner />
             <div className="main-content">
                 <div className="layout">
-                    <Category categories={categories} />
-                    <Products products={products}
+                    <Category
+                        categories={categories}
+                    />
+                    <Products
+                        products={products}
                         headingText='Popular Products' />
                 </div>
             </div>

@@ -17,8 +17,8 @@ const Category = ({ categories }) => {
                             } alt="" />
                     </div>
                 ))}
-
-
+                {/* <div className="category">
+                <img src={cat1} alt="" /> */}
             </div>
         </div>
     );
