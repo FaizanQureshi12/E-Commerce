@@ -1,16 +1,16 @@
 @import "../../../css-config/mixins.scss";
 
-.cart-products {
+.cart-products {   
     flex-grow: 1;
 
     .search-result-item {
         padding: 20px 15px;
         display: flex;
         gap: 10px;
-        width:10px;
+        // width:10px;
         background-color: white;
         @include md{
-            width: 100%;
+            // width: 100%;
         }
 
         .img-container {
@@ -28,7 +28,7 @@
         .prod-details {
             overflow: hidden;
             position: relative;
-
+            
             .name {
                 // width: 150px;
                 text-overflow: ellipsis;

@@ -18,7 +18,9 @@ const CartItem = () => {
                             item.attributes.img.data[0].attributes.url} alt="" />
                     </div>
                     <div className="prod-details">
-                        <span className="name">{item.attributes.title}</span>
+                        <span className="name">
+                            {item.attributes.title}
+                        </span>
                         <MdClose className="close-btn"
                             onClick={() => handleRemoveFromCart(item)} />
                         <div className="quantity-buttons">

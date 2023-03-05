@@ -1,9 +1,10 @@
 @import "../../css-config/mixins.scss";
 
 .cart-panel {
-    position: fixed;
+    position: fixed;  
     top: 0;
-    // left: 0;
+    left: 0;    
+    // remain comment for use of ful screen
     // width: 100%;
     right: 0;
     height: 90%;
